@@ -1,2 +1,50 @@
 <app-navbar></app-navbar>
-<p>home works!</p>
+<main class="container-fluid p-0">
+  <!-- banner start -->
+  <div
+    id="carouselExampleAutoplaying"
+    class="carousel slide"
+    data-bs-ride="carousel"
+  >
+    <div class="carousel-inner">
+      <div class="carousel-item active" *ngFor="let data of bannerImgs">
+        <img [src]="data.img" class="d-block w-100" alt="banner" />
+      </div>
+    </div>
+    <button
+      class="carousel-control-prev"
+      type="button"
+      data-bs-target="#carouselExampleAutoplaying"
+      data-bs-slide="prev"
+    >
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button
+      class="carousel-control-next"
+      type="button"
+      data-bs-target="#carouselExampleAutoplaying"
+      data-bs-slide="next"
+    >
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+  <!-- banner end -->
+
+  <!-- Categories box start -->
+  <div class="container mt-5 mb-5">
+    <div class="row categorisBox">
+      <div
+        class="col-lg-3 col-6 categorisContent"
+        *ngFor="let data of getCategoriesData"
+      >
+        <a>
+          <img [src]="data.img" />
+          <h4>{{ data.name }}</h4>
+        </a>
+      </div>
+    </div>
+  </div>
+  <!-- Categories box end -->
+</main>
