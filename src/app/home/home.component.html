@@ -39,12 +39,67 @@
         class="col-lg-3 col-6 categorisContent"
         *ngFor="let data of getCategoriesData"
       >
-        <a>
-          <img [src]="data.img" />
+        <a [routerLink]="['product-page', data.code]">
+          <img src="{{ data.img }}" />
           <h4>{{ data.name }}</h4>
         </a>
       </div>
     </div>
   </div>
   <!-- Categories box end -->
+  <!-- show product start  -->
+  <!-- show appliance product  -->
+
+  <div class="container mt-3 mb-3">
+    <div class="row productBox">
+      <p>
+        <a class="float-start link-offset-3">Best of Appliance</a>
+        <a class="float-end"><i class="bi bi-arrow-right-circle"></i></a>
+      </p>
+
+      <div
+        class="col-lg-3 mt-5"
+        *ngFor="let data of getApplianceProductData; index as i"
+      >
+        <a class="productLink">
+          <div class="productContent" *ngIf="i <= 3">
+            <div class="productImg">
+              <img [src]="data.pdImg" />
+            </div>
+            <h4>{{ data.pdName }}</h4>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- show appliance product  -->
+  <!-- show fashion product  -->
+
+  <div class="container mt-3 mb-3">
+    <div class="row productBox">
+      <p>
+        <a class="float-start link-offset-3">Best of Fashion</a>
+        <a class="float-end"><i class="bi bi-arrow-right-circle"></i></a>
+      </p>
+
+      <div
+        class="col-lg-3 mt-5"
+        *ngFor="let data of getFashionProductData; index as i"
+      >
+        <a class="productLink">
+          <div class="productContent" *ngIf="i <= 3">
+            <div class="productImg">
+              <img [src]="data.pdImg" />
+            </div>
+            <h4>{{ data.pdName }}</h4>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- show fashion product  -->
+
+  <!-- show product end  -->
 </main>
