@@ -12,7 +12,6 @@ import { CommonModule } from '@angular/common';
   styleUrl: './product-page.component.css'
 })
 export class ProductPageComponent implements OnInit {
-
   getParamValue: any;
   getProductData: any = [];
   filterProductData: any = [];
@@ -22,16 +21,16 @@ export class ProductPageComponent implements OnInit {
   ngOnInit(): void {
     this.getParamValue = this.route.snapshot.paramMap.get('name');
 
-    this.getData.productData.filter((el: any) => {
-      if (el.pdCategory == this.getParamValue) {
-        this.getProductData.push(el);
-        this.filterProductData.push(el);
+    this.getData.productData.filter((ele: any) => {
+      if (ele.pdCategory == this.getParamValue) {
+        this.getProductData.push(ele);
+        this.filterProductData.push(ele);
       }
     });
 
-    this.getData.subCategorisFilterData.filter((el: any) => {
-      if (el.categories == this.getParamValue) {
-        this.getSubCategoryOption.push(el);
+    this.getData.subCategorisFilterData.filter((ele: any) => {
+      if (ele.categories == this.getParamValue) {
+        this.getSubCategoryOption.push(ele);
       }
     });
   }
@@ -42,9 +41,9 @@ export class ProductPageComponent implements OnInit {
     console.log(getFilterValue, 'getFilterValue');
 
     if (getFilterValue != 'all') {
-      this.getData.productData.filter((el: any) => {
-        if (el.pdSubCategory == getFilterValue) {
-          this.filterProductData.push(el);
+      this.getData.productData.filter((ele: any) => {
+        if (ele.pdSubCategory == getFilterValue) {
+          this.filterProductData.push(ele);
         }
       });
     } else {

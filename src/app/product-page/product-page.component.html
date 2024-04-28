@@ -14,7 +14,7 @@
           <option value="all">All</option>
           <option
             *ngFor="let data of getSubCategoryOption"
-            [value]="data.subcategories"
+            value="{{ data.subcategories }}"
           >
             {{ data.subcategories }}
           </option>
@@ -27,12 +27,13 @@
 
       <div class="row pageContent mt-5" *ngFor="let data of filterProductData">
         <div class="col-lg-4 col-12 mt-3">
-          <img [src]="data.pdImg" />
+          <img src="{{ data.pdImg }}" />
         </div>
         <div class="col-lg-8 col-12 mt-5">
           <h4>{{ data.pdName }}</h4>
           <p>{{ data.pdDesc }}</p>
           <p>
+            <span class="fw-medium"></span>
             {{ data.pdPrice | currency }}
           </p>
           <a
