@@ -1,2 +1,50 @@
 <app-navbar></app-navbar>
-<p>cart works!</p>
+<main class="container mt-5 mb-5">
+  @if(totalCart==0){
+  <div class="bg-white text-center fw-bold mt-5 p-5">
+    <h4>cart is empty!</h4>
+  </div>
+  }
+  <div class="row">
+    <div class="col-lg-8 col-12 cartBox">
+      <!-- cart content -->
+      <div class="row mt-5 mb-5" *ngFor="let data of getCartData">
+        <div class="col-lg-2">
+          <img [src]="data.pdImg" />
+        </div>
+        <div class="col-lg-10">
+          <h5>{{ data.pdName }}</h5>
+          <p>{{ data.pdDesc }}</p>
+          <p>{{ data.pdPrice | currency }}</p>
+          <button class="btn btn-sm btn-danger" (click)="removeCart(data)">
+            <i class="bi bi-trash"></i> Remove
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <!-- price content -->
+      <div class="priceBox">
+        <h5 class="fw-bold">Price Details</h5>
+        <hr />
+        <p class="mt-2 mb-2">
+          <span>Price({{ totalCart }})</span>
+          <span class="float-end">{{ totalAmount | currency }}</span>
+        </p>
+
+        <div class="clearfix"></div>
+        <p class="mt-2 mb-2">
+          <span>Delivery</span>
+          <span class="float-end">Free</span>
+        </p>
+
+        <div class="clearfix"></div>
+        <hr />
+        <p class="mt-2 mb-2 fw-bold">
+          <span>Total Amount</span>
+          <span class="float-end">55555</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</main>
