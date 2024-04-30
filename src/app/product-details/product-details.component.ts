@@ -2,13 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { NavbarComponent } from '../navbar/navbar.component';
 import { GetDataService } from '../services/get-data.service';
 import { CommonModule } from '@angular/common';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { DataStorageService } from '../services/data-storage.service';
 
 @Component({
   selector: 'app-product-details',
   standalone: true,
-  imports: [NavbarComponent, CommonModule],
+  imports: [NavbarComponent, CommonModule, RouterLink],
   templateUrl: './product-details.component.html',
   styleUrl: './product-details.component.css'
 })

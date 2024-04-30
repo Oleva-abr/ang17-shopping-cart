@@ -53,18 +53,27 @@
   <div class="container mt-3 mb-3">
     <div class="row productBox">
       <p>
-        <a class="float-start link-offset-3">Best of Appliance</a>
-        <a class="float-end"><i class="bi bi-arrow-right-circle"></i></a>
+        <a
+          class="float-start link-offset-3"
+          [routerLink]="['/product-page', 'appliances']"
+          >Best of Appliance</a
+        >
+        <a class="float-end" [routerLink]="['/product-page', 'appliances']"
+          ><i class="bi bi-arrow-right-circle"></i
+        ></a>
       </p>
 
       <div
         class="col-lg-3 mt-5"
         *ngFor="let data of getApplianceProductData; index as i"
       >
-        <a class="productLink">
+        <a
+          [routerLink]="['/product-detail', data.pdCategory, data.pdId]"
+          class="productLink"
+        >
           <div class="productContent" *ngIf="i <= 3">
             <div class="productImg">
-              <img [src]="data.pdImg" />
+              <img src="{{ data.pdImg }}" />
             </div>
             <h4>{{ data.pdName }}</h4>
           </div>
@@ -74,23 +83,33 @@
   </div>
 
   <!-- show appliance product  -->
+
   <!-- show fashion product  -->
 
   <div class="container mt-3 mb-3">
     <div class="row productBox">
       <p>
-        <a class="float-start link-offset-3">Best of Fashion</a>
-        <a class="float-end"><i class="bi bi-arrow-right-circle"></i></a>
+        <a
+          class="float-start link-offset-3"
+          [routerLink]="['/product-page', 'fashion']"
+          >Best of Fashion</a
+        >
+        <a class="float-end" [routerLink]="['/product-page', 'fashion']"
+          ><i class="bi bi-arrow-right-circle"></i
+        ></a>
       </p>
 
       <div
         class="col-lg-3 mt-5"
         *ngFor="let data of getFashionProductData; index as i"
       >
-        <a class="productLink">
+        <a
+          [routerLink]="['/product-detail', data.pdCategory, data.pdId]"
+          class="productLink"
+        >
           <div class="productContent" *ngIf="i <= 3">
             <div class="productImg">
-              <img [src]="data.pdImg" />
+              <img src="{{ data.pdImg }}" />
             </div>
             <h4>{{ data.pdName }}</h4>
           </div>
